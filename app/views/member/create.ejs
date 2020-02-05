@@ -1,0 +1,35 @@
+<h1>Create Member</h1>
+
+<form method = "POST" action="/<%= hospital.id%>/members">
+
+<label>Name:</label><br>
+<input type="text" name="name" id="name">
+<br>
+
+<label>Nationality</label><br>
+<input type="text" name="nationality" id="nationality">
+<br>
+
+<label>Date Of Birth</label><br>
+<input type="date" name="dateOfBirth" id="dateOfBirth">
+<br>
+
+<label>National ID</label><br>
+<input type="number" name="nationalID" id="nationalID">
+<br>
+
+<label>Blood Type</label><br>
+<input type="text" name="bloodType" id="bloodType">
+<br>
+
+<input type="hidden" name="hospitalID" id="hospitalID" value="<%= hospital.id %>">
+<br>
+
+<%var hosp = hospital.id %>
+<!-- <% console.log(hosp)%> -->
+
+
+<input type="submit" name="submit">
+
+<br>
+</form>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>Member detiels</h1>
+            <b>Name:</b>
+            <%= member.name%><br>
+            <%= member.nationality%><br>
+            <%= member.dateOfBirth%><br>
+            <%= member.nationalID%><br>
+            <%= member.bloodType%><br>
+            <%= member.type%>
+
+            <% for (var i = 0; i < member.hospital.length; i++) { %>
+                <%= member.hospital[i].name %>
+            <% } %>
+    </body>
+</html>

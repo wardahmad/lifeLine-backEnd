@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <%for (var i = 0; i < hospital.length; i++){ %>
+            Hospital Name: 
+            <a href="/hospital/<%= hospital[i].id; %>">
+                <%= hospital[i].name%>
+            </a>
+            Location: <%= hospital[i].location%>
+
+            <form action="/hospital/<%=hospital[i].id;%>?_method=DELETE" method="POST">
+                <input type="submit" value="DELETE"/>
+            </form>
+            <a href="/hospital/<%=hospital[i].id;%>/edit">Edit Hospital</a><br>
+        <% } %>
+        <br><br><br>
+        <a href="/createHospital">Create Hospital</a>
+    </body>
+</html>

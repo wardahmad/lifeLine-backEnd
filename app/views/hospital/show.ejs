@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>Hospital detiels</h1>
+            <b>Hospital Name:</b>
+            <%= hospital.name%><br>
+            <b>Location:</b>
+            <%= hospital.location%><br>
+            <b>Member:</b>
+            <% for (var i = 0; i < hospital.member.length; i++) { %>
+                <%= hospital.member[i].name %>
+            <% } %>
+            <br><br><br>
+            <a href="/hospital">Back to Hospitals List</a>
+            <br><br><br>
+            <a href="/<%= hospital.id%>/createMember">Create Member</a>  
+    </body>
+</html>
