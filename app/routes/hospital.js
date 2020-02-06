@@ -1,14 +1,11 @@
 const express = require('express');
-
 const Hospital = require('../models/hospital')
-
 const router = express.Router();
 const methodOverride = require('method-override');
 ///////
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 ///////
-
 router.use(express.urlencoded());
 router.use(methodOverride('_method'));
 

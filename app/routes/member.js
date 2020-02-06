@@ -1,8 +1,6 @@
 const express = require('express');
-
 const Member = require('../models/member');
 const Hospital = require('../models/hospital')
-
 const router = express.Router();
 router.use(express.urlencoded());
 
@@ -17,7 +15,6 @@ router.get('/members', (req,res) => {
         res.status(500).json({error:error});
     });
 });
-
 
 // Show Router with id
 router.get('/members/:id', function(req,res){
@@ -42,7 +39,6 @@ router.get('/members/:id', function(req,res){
     });
 });
 
-
 // Create Router EJS
 router.get('/:id/createMember', function(req,res){
     Hospital.findById(req.params.id, (err, hospital) => {
@@ -62,26 +58,6 @@ router.post('/:id/members', (req, res) =>{
         .then(hospital => res.json(hospital))
         .catch(err => res.send(err))
     }).catch(err => res.send(err))
-    // .then(function(member){
-
-    //         /////////////////
-
-    //         member.hospital.push(req.params.id);
-    //         member.save((err, savedMember) => {
-    //               res.json(savedMember);
-    //         });
-            
-
-    //         console.log("idMember")
-    //         console.log(member.id)
-
-    //         console.log("idhospital")
-    //         console.log(req.params.id)
-                      
-    //     })
-    //     .catch(function(error){
-    //         res.status(500).json({error: error})
-    //     });
 });
 
 

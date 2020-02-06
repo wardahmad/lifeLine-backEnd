@@ -5,7 +5,6 @@ const cors = require('cors');
 //const methodOverride = require('method-override');
 
 const db = require('./config/db');
-//const indexRouter = require('./app/routes/home');
 const memberRouter = require('./app/routes/member.js')
 const hospitalRouter = require('./app/routes/hospital')
 
@@ -21,11 +20,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extand : true}));
 app.use(cors());
-//app.use(indexRouter);
 app.use(memberRouter);
 app.use(hospitalRouter);
-//app.use(methodOverride('_method'));
-
 
 
 const port = process.env.PORT || 7000;
